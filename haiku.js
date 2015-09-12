@@ -1,8 +1,6 @@
 var fs = require('fs');
 
-/* dictionary contains an index of the letters of the alphabet
-* each letter is an index of syllable counts
-* each syllable count is an array of words containing that many syllables
+/* dictionary contains an index of words by syllable count
 */
 var dictionary = {};
 
