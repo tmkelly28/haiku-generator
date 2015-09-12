@@ -63,7 +63,8 @@ function createHaiku(dictionary, pattern) {
       var syllables = pattern[i][j].toString();
       var indexLength = dictionary[syllables].length;
       var rand = createRandomGenerator(0, indexLength - 1);
-      result += dictionary[syllables][rand()] + " ";
+      var word = dictionary[syllables][rand()].replace(/\d|\(|\)/g, "");
+      result += word + " ";
     }
     if (i !== pattern.length - 1) { result += "\n"; };
   }
