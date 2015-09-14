@@ -7,16 +7,6 @@ fs.readFile('cmudict.txt', function (error, data) {
   */
   var dictionary = {};
   
-  /* sums the values in an array of numbers
-  */
-  function sum(array) {
-    var result = 0;
-    for (var i = 0; i < array.length; i++) {
-      result += array[i];
-    }
-    return result;
-  }
-
   /* creates a function that generates a random number between a specified lowerBound and upperBound
   */
   function createRandomGenerator(lowerBound, upperBound) {
@@ -35,6 +25,16 @@ fs.readFile('cmudict.txt', function (error, data) {
   *  maxSum: the maximum sum of the values in the array
   */
   function createRandomPattern(array, minValue, maxValue, maxSum) {
+    /* sums the values in an array of numbers
+    */
+    function sum(array) {
+      var result = 0;
+      for (var i = 0; i < array.length; i++) {
+        result += array[i];
+      }
+      return result;
+    }
+    
     var rand = createRandomGenerator(minValue, maxValue);
     array.push(rand());
     var currentSum = sum(array);
